@@ -1,16 +1,27 @@
 package br.edu.ifpb.dac.projeto.domain;
 
 import java.io.Serializable;
+import javax.persistence.CascadeType;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
+@Entity
 public class Aluno implements Serializable {
     
+    @Id
+    @GeneratedValue
     private int ID;
     private String matricula;
     private String nome;
+    @OneToOne(cascade = CascadeType.PERSIST)
+    private Usuario usuario;
 
     public Aluno() { }
 
-    public Aluno(int ID, String matricula, String nome) {
+    public Aluno(int ID, String matricula, String nome, Usuario usuario) {
+        this();
         this.ID = ID;
         this.matricula = matricula;
         this.nome = nome;

@@ -1,9 +1,15 @@
 package br.edu.ifpb.dac.projeto.domain;
 
 import java.io.Serializable;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
 public class Relatorio implements Serializable {
     
+    @Id
+    @GeneratedValue
     private int codigo;
     private int quant_almoco;
 

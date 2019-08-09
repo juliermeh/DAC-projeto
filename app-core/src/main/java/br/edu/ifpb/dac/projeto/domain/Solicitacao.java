@@ -1,18 +1,25 @@
 package br.edu.ifpb.dac.projeto.domain;
 
 import java.io.Serializable;
+import java.util.Date;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 
 public class Solicitacao implements Serializable {
     
+    @Id
+    @GeneratedValue
     private int codigo;
     private String justificativa;
-    private Temporal data;
+    @Temporal(TemporalType.DATE)
+    private Date data;
     private int quantidade;
 
     public Solicitacao() {  }
 
-    public Solicitacao(int codigo, String justificativa, Temporal data, int quantidade) {
+    public Solicitacao(int codigo, String justificativa, Date data, int quantidade) {
         this.codigo = codigo;
         this.justificativa = justificativa;
         this.data = data;
@@ -35,11 +42,11 @@ public class Solicitacao implements Serializable {
         this.justificativa = justificativa;
     }
 
-    public Temporal getData() {
+    public Date getData() {
         return data;
     }
 
-    public void setData(Temporal data) {
+    public void setData(Date data) {
         this.data = data;
     }
 
