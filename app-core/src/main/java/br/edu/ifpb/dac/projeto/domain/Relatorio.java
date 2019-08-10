@@ -15,8 +15,7 @@ public class Relatorio implements Serializable {
 
     public Relatorio() {  }
 
-    public Relatorio(int codigo, int quant_almoco) {
-        this.codigo = codigo;
+    public Relatorio(int quant_almoco) {
         this.quant_almoco = quant_almoco;
     }
 

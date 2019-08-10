@@ -10,26 +10,25 @@ public class Usuario implements Serializable {
     
     @Id
     @GeneratedValue
-    private int ID;
+    private int Id;
     private String nome;
     private int matricula;
     private String senha;
 
     public Usuario() {  }
 
-    public Usuario(int ID, String nome, int matricula, String senha) {
-        this.ID = ID;
+    public Usuario(String nome, int matricula, String senha) {
         this.nome = nome;
         this.matricula = matricula;
         this.senha = senha;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return Id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int Id) {
+        this.Id = Id;
     }
 
     public String getNome() {

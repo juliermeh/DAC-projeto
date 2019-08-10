@@ -19,8 +19,7 @@ public class Solicitacao implements Serializable {
 
     public Solicitacao() {  }
 
-    public Solicitacao(int codigo, String justificativa, Date data, int quantidade) {
-        this.codigo = codigo;
+    public Solicitacao(String justificativa, Date data, int quantidade) {
         this.justificativa = justificativa;
         this.data = data;
         this.quantidade = quantidade;

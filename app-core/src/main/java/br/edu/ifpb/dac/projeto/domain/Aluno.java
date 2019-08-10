@@ -12,7 +12,7 @@ public class Aluno implements Serializable {
     
     @Id
     @GeneratedValue
-    private int ID;
+    private int Id;
     private String matricula;
     private String nome;
     @OneToOne(cascade = CascadeType.PERSIST)
@@ -20,19 +20,18 @@ public class Aluno implements Serializable {
 
     public Aluno() { }
 
-    public Aluno(int ID, String matricula, String nome, Usuario usuario) {
-        this();
-        this.ID = ID;
+    public Aluno(String matricula, String nome, Usuario usuario) {
         this.matricula = matricula;
         this.nome = nome;
+        this.usuario = usuario;
     }
 
-    public int getID() {
-        return ID;
+    public int getId() {
+        return Id;
     }
 
-    public void setID(int ID) {
-        this.ID = ID;
+    public void setId(int Id) {
+        this.Id = Id;
     }
 
     public String getMatricula() {
@@ -50,6 +49,14 @@ public class Aluno implements Serializable {
     public void setNome(String nome) {
         this.nome = nome;
     }
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
+    }
     
-    
+       
 }
