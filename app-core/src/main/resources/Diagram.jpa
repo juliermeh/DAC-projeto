@@ -1,0 +1,329 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings ptype="MONOLITH" ppkg="br.edu.ifpb.dac.projeto" epkg="domain" v="5.3" rws="_156548436286012" Pws="_156548436286012" cws="_156548436286012" persistenceUnitName="DEFAULT_PU" sm="false" xs="false" id="_156548436286011" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <jpa:mapped-superclass compositePrimaryKeyClass="LoginPK" abs="false" class="Login" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548465936144">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="login" id="_156548468320348">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="senha" id="_156548469677950">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nome" id="_1565517938028474">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_156548466977246">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+    </jpa:mapped-superclass>
+    <jpa:entity compositePrimaryKeyClass="GestorPK" abs="false" class="Gestor" superclassId="_156548465936144" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548463343017">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548464411241" v="true" xvt="" name="listaAlmocos" id="_1565511076268440">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Gestor.findAll">
+            <jpa:query>Select e from Gestor e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Gestor.findByData">
+            <jpa:query>Select g from Gestor g where g.data=:data</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="RefeitorioPK" abs="false" class="Refeitorio" superclassId="_156548465936144" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548463465420">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548464411241" v="true" xvt="" name="listaAlmocos" id="_1565511174476538">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Refeitorio.findAll">
+            <jpa:query>Select e from Refeitorio e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Refeitorio.findByData">
+            <jpa:query>Select r from Refeitorio r where r.data=:data</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Refeitorio.findByAttribute1">
+            <jpa:query>Select r from Refeitorio r where r.attribute1=:attribute1</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="AlunoPK" abs="false" class="Aluno" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548463585423">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="matricula" id="_156548500861167">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nome" id="_156548501866768">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_156548463710726" connected-attribute-id="_156548504808571" v="true" xvt="" name="turma" id="_156548504808470">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_156548463585524">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Aluno.findAll">
+            <jpa:query>Select e from Aluno e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Aluno.findByMatricula">
+            <jpa:query>Select a from Aluno a where a.matricula=:matricula</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Aluno.findByNome">
+            <jpa:query>Select a from Aluno a where a.nome=:nome</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="TurmaPK" abs="false" class="Turma" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548463710726">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nome" id="_156548488941957">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_156548492046460" connected-attribute-id="_156548496106366" v="true" xvt="" name="professor" id="_156548496106165">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548463585423" connected-attribute-id="_156548504808470" v="true" xvt="" name="alunos" id="_156548504808571">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_156548463710727">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Turma.findAll">
+            <jpa:query>Select e from Turma e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Turma.findByNome">
+            <jpa:query>Select t from Turma t where t.nome=:nome</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="AlunoContempladoPK" abs="false" class="AlunoContemplado" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548463967232">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="matricula" id="_156548525557181">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nome" id="_156548526437182">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="dataInicio" id="_156548528281983">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_156548464241638" connected-attribute-id="_1565485511373105" v="true" xvt="" name="CAEST" id="_1565485511372104">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_156548463967333">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="AlunoContemplado.findAll">
+            <jpa:query>Select e from AlunoContemplado e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AlunoContemplado.findByMatricula">
+            <jpa:query>Select a from AlunoContemplado a where a.matricula=:matricula</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AlunoContemplado.findByNome">
+            <jpa:query>Select a from AlunoContemplado a where a.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="AlunoContemplado.findByDataInicio">
+            <jpa:query>Select a from AlunoContemplado a where a.dataInicio=:dataInicio</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="SolicitacaoPK" abs="false" class="Solicitacao" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548464095235">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="justificatica" id="_156548511707572">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" xvt="" name="data" id="_156548511805173">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+            <jpa:basic attribute-type="" v="true" xvt="" name="status" id="_156548511870774">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:enumerated>ORDINAL</jpa:enumerated>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_156548492046460" connected-attribute-id="_156548518075779" v="true" xvt="" name="professor" id="_156548518075678">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_156548463710726" v="true" xvt="" name="turma" id="_156548516285376">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_156548464095236">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Solicitacao.findAll">
+            <jpa:query>Select e from Solicitacao e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Solicitacao.findByJustificatica">
+            <jpa:query>Select s from Solicitacao s where s.justificatica=:justificatica</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Solicitacao.findByData">
+            <jpa:query>Select s from Solicitacao s where s.data=:data</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Solicitacao.findByStatus">
+            <jpa:query>Select s from Solicitacao s where s.status=:status</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="CAESTPK" abs="false" class="CAEST" superclassId="_156548465936144" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548464241638">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548463967232" connected-attribute-id="_1565485511372104" v="true" xvt="" name="alunoContemplados" id="_1565485511373105">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:one-to-many orp="false" own="true" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548464095235" v="true" xvt="" name="solicitacoes" id="_1565511619293640">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+        <jpa:nq e="false" name="CAEST.findAll">
+            <jpa:query>Select e from CAEST e</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ListaAlmocoPK" abs="false" class="ListaAlmoco" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548464411241">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="matricula" id="_1565485853515122">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="nome" id="_1565485852147121">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="status" id="_1565485853931123">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:basic attribute-type="java.util.Date" v="true" xvt="" name="data" id="_1565511149316536">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:temporal>DATE</jpa:temporal>
+            </jpa:basic>
+            <jpa:many-to-one optional="true" primaryKey="false" connected-entity-id="_156548464241638" v="true" xvt="" name="CAEST" id="_1565485901844125">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:many-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_156548464411342">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="ListaAlmoco.findAll">
+            <jpa:query>Select e from ListaAlmoco e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ListaAlmoco.findByNome">
+            <jpa:query>Select l from ListaAlmoco l where l.nome=:nome</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ListaAlmoco.findByMatricula">
+            <jpa:query>Select l from ListaAlmoco l where l.matricula=:matricula</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ListaAlmoco.findByStatus">
+            <jpa:query>Select l from ListaAlmoco l where l.status=:status</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="ListaAlmoco.findByData">
+            <jpa:query>Select l from ListaAlmoco l where l.data=:data</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="ProfessorPK" abs="false" class="Professor" superclassId="_156548465936144" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_156548492046460">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="matricula" id="_1565517836036472">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548463710726" connected-attribute-id="_156548496106165" v="true" xvt="" name="turmas" id="_156548496106366">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+            <jpa:one-to-many orp="false" collection-type="java.util.List" cit="java.util.ArrayList" connected-entity-id="_156548464095235" connected-attribute-id="_156548518075678" v="true" xvt="" name="solicitacoes" id="_156548518075779">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-many>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Professor.findAll">
+            <jpa:query>Select e from Professor e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Professor.findByMatricula">
+            <jpa:query>Select p from Professor p where p.matricula=:matricula</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Professor.findByNome">
+            <jpa:query>Select p from Professor p where p.nome=:nome</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:entity compositePrimaryKeyClass="IndeferidoPK" abs="false" class="Indeferido" v="true" jbn="false" xre="false" m="false" rootElement="_156548436286011" id="_1565515272685352">
+        <jpa:ath>ericl</jpa:ath>
+        <jpa:attributes>
+            <jpa:basic attribute-type="String" v="true" xvt="" name="comentario" id="_1565515309214355">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:basic>
+            <jpa:one-to-one own="true" orp="false" optional="true" primaryKey="false" connected-entity-id="_156548464095235" v="true" xvt="" name="solicitacao" id="_1565515338077357">
+                <jpa:xwm/>
+                <jpa:xm/>
+            </jpa:one-to-one>
+            <jpa:id attribute-type="Long" v="true" xvt="" name="id" id="_1565515272711353">
+                <jpa:xwm/>
+                <jpa:xm/>
+                <jpa:generated-value strategy="DEFAULT"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq e="false" name="Indeferido.findAll">
+            <jpa:query>Select e from Indeferido e</jpa:query>
+        </jpa:nq>
+        <jpa:nq e="false" name="Indeferido.findByComentario">
+            <jpa:query>Select i from Indeferido i where i.comentario=:comentario</jpa:query>
+        </jpa:nq>
+    </jpa:entity>
+    <jpa:c>
+        <db u="jdbc:postgresql://localhost:5432/DAC_Projeto" n="postgres" p="admin" d="org.postgresql.Driver"/>
+    </jpa:c>
+    <jpa:wsl>
+        <jpa:ws n="Main" id="_156548436286012">
+            <i ref="_156548463967232" x="753" y="605"/>
+            <i ref="_156548464241638" x="284" y="424"/>
+            <i ref="_156548464411241" x="101" y="549"/>
+            <i ref="_1565515272685352" x="897" y="400"/>
+            <i ref="_156548463465420" x="141" y="211"/>
+            <i ref="_156548463710726" x="807" y="42"/>
+            <i ref="_156548465936144" x="344" y="61"/>
+            <i ref="_156548463343017" x="13" y="103"/>
+            <i ref="_156548463585423" x="935" y="230"/>
+            <i ref="_156548492046460" x="553" y="61"/>
+            <i ref="_156548464095235" x="580" y="308"/>
+        </jpa:ws>
+    </jpa:wsl>
+</jpa:entity-mappings>
