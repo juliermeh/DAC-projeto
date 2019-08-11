@@ -2,60 +2,109 @@ package br.edu.ifpb.dac.projeto.domain;
 
 import java.io.Serializable;
 import java.util.Date;
+import java.util.Optional;
+import javax.persistence.Basic;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+/**
+ * @author ericl
+ */
+@Entity
 public class Solicitacao implements Serializable {
-    
+
     @Id
     @GeneratedValue
-    private int codigo;
-    private String justificativa;
+    @Column(unique = false, insertable = true, nullable = true, updatable = true, length = 255, scale = 0, precision = 0)
+    private Long id;
+
+    @Basic(optional = true)
+    @Column(unique = false, insertable = true, nullable = true, updatable = true, length = 255, scale = 0, precision = 0)
+    private String justificatica;
+
+    @Basic(optional = true)
+    @Column(unique = false, insertable = true, nullable = true, updatable = true, length = 255, scale = 0, precision = 0)
     @Temporal(TemporalType.DATE)
     private Date data;
-    private int quantidade;
 
-    public Solicitacao() {  }
+    @Basic(optional = true)
+    @Column(unique = false, insertable = true, nullable = true, updatable = true, length = 255, scale = 0, precision = 0)
+    @Enumerated(EnumType.STRING)
+    private TipoDeferimento status ;
 
-    public Solicitacao(String justificativa, Date data, int quantidade) {
-        this.justificativa = justificativa;
+    @OneToOne(optional = true, orphanRemoval = false, targetEntity = Turma.class)
+    private Turma turma;
+
+    @ManyToOne(optional = true, targetEntity = Professor.class)
+    private Professor professor;
+
+    public Solicitacao(String justificatica, Date data, TipoDeferimento status, Turma turma, Professor professor) {
+        this.justificatica = justificatica;
         this.data = data;
-        this.quantidade = quantidade;
+        this.status = status;
+        this.turma = turma;
+        this.professor = professor;
     }
 
-    public int getCodigo() {
-        return codigo;
+    public Solicitacao() {
     }
 
-    public void setCodigo(int codigo) {
-        this.codigo = codigo;
+    
+    public Long getId() {
+        return id;
     }
 
-    public String getJustificativa() {
-        return justificativa;
+    public void setId(Long id) {
+        this.id = id;
     }
 
-    public void setJustificativa(String justificativa) {
-        this.justificativa = justificativa;
+    public Optional<String> getJustificatica() {
+        return Optional.ofNullable(justificatica);
     }
 
-    public Date getData() {
-        return data;
+    public void setJustificatica(String justificatica) {
+        this.justificatica = justificatica;
+    }
+
+    public Optional<Date> getData() {
+        return Optional.ofNullable(data);
     }
 
     public void setData(Date data) {
         this.data = data;
     }
 
-    public int getQuantidade() {
-        return quantidade;
+    public TipoDeferimento getStatus() {
+        return status;
     }
 
-    public void setQuantidade(int quantidade) {
-        this.quantidade = quantidade;
+    public void setStatus(TipoDeferimento status) {
+        this.status = status;
     }
     
-    
+
+    public Optional<Turma> getTurma() {
+        return Optional.ofNullable(turma);
+    }
+
+    public void setTurma(Turma turma) {
+        this.turma = turma;
+    }
+
+    public Optional<Professor> getProfessor() {
+        return Optional.ofNullable(professor);
+    }
+
+    public void setProfessor(Professor professor) {
+        this.professor = professor;
+    }
+
 }

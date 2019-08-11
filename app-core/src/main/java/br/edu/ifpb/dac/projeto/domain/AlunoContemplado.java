@@ -13,7 +13,7 @@ import javax.persistence.ManyToOne;
  * @author ericl
  */
 @Entity
-public class Aluno implements Serializable {
+public class AlunoContemplado implements Serializable {
 
     @Id
     @GeneratedValue
@@ -28,18 +28,25 @@ public class Aluno implements Serializable {
     @Column(unique = false, insertable = true, nullable = true, updatable = true, length = 255, scale = 0, precision = 0)
     private String nome;
 
-    @ManyToOne(optional = true, targetEntity = Turma.class)
-    private Turma turma;
+    @Basic(optional = true)
+    @Column(unique = false, insertable = true, nullable = true, updatable = true, length = 255, scale = 0, precision = 0)
+    private String dataInicio;
 
-    public Aluno(String matricula, String nome, Turma turma) {
+    @ManyToOne(optional = true, targetEntity = CAEST.class)
+    private CAEST CAEST;
+
+    public AlunoContemplado(String matricula, String nome, String dataInicio, CAEST CAEST) {
         this.matricula = matricula;
         this.nome = nome;
-        this.turma = turma;
+        this.dataInicio = dataInicio;
+        this.CAEST = CAEST;
     }
 
-    public Aluno() {
+    public AlunoContemplado() {
     }
     
+    
+
     public Long getId() {
         return id;
     }
@@ -64,12 +71,20 @@ public class Aluno implements Serializable {
         this.nome = nome;
     }
 
-    public Optional<Turma> getTurma() {
-        return Optional.ofNullable(turma);
+    public Optional<String> getDataInicio() {
+        return Optional.ofNullable(dataInicio);
     }
 
-    public void setTurma(Turma turma) {
-        this.turma = turma;
+    public void setDataInicio(String dataInicio) {
+        this.dataInicio = dataInicio;
+    }
+
+    public Optional<CAEST> getCAEST() {
+        return Optional.ofNullable(CAEST);
+    }
+
+    public void setCAEST(CAEST CAEST) {
+        this.CAEST = CAEST;
     }
 
 }
