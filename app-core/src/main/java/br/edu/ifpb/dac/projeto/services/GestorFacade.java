@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class GestorFacade extends AbstractFacade<Gestor> {
+public class GestorFacade extends AbstractFacade<Gestor> implements GestorFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

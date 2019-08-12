@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class AlunoContempladoFacade extends AbstractFacade<AlunoContemplado> {
+public class AlunoContempladoFacade extends AbstractFacade<AlunoContemplado> implements AlunoContempladoFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

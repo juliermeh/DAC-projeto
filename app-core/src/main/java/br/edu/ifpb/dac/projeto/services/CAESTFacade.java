@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class CAESTFacade extends AbstractFacade<CAEST> {
+public class CAESTFacade extends AbstractFacade<CAEST> implements CAESTFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

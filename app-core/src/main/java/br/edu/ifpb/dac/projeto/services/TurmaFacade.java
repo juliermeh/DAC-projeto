@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class TurmaFacade extends AbstractFacade<Turma> {
+public class TurmaFacade extends AbstractFacade<Turma> implements TurmaFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

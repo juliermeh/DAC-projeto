@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class RefeitorioFacade extends AbstractFacade<Refeitorio> {
+public class RefeitorioFacade extends AbstractFacade<Refeitorio> implements RefeitorioFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

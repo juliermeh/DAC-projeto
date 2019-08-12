@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class ProfessorFacade extends AbstractFacade<Professor> {
+public class ProfessorFacade extends AbstractFacade<Professor> implements ProfessorFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

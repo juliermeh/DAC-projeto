@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class ListaAlmocoFacade extends AbstractFacade<ListaAlmoco> {
+public class ListaAlmocoFacade extends AbstractFacade<ListaAlmoco> implements ListaAlmocoFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

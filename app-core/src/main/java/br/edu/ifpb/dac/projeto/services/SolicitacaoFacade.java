@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class SolicitacaoFacade extends AbstractFacade<Solicitacao> {
+public class SolicitacaoFacade extends AbstractFacade<Solicitacao> implements SolicitacaoFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;

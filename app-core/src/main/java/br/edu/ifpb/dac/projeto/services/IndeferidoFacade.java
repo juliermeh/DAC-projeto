@@ -15,7 +15,7 @@ import javax.persistence.PersistenceContext;
  * @author ericl
  */
 @Stateless
-public class IndeferidoFacade extends AbstractFacade<Indeferido> {
+public class IndeferidoFacade extends AbstractFacade<Indeferido> implements IndeferidoFacadeLocal {
 
     @PersistenceContext(unitName = "DEFAULT_PU")
     private EntityManager em;
